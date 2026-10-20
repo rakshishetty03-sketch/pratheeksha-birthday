@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Pratheeksha 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ff5c8a; --rose:#ff9eb5; --gold:#ffd27a; --cream:#fff4f7; --ink:#4a1f33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',sans-serif; color:var(--ink);
+    background:linear-gradient(160deg,#ffe3ec 0%,#ffd1e0 40%,#ffc2d6 100%);
+    background-attachment:fixed; overflow-x:hidden; min-height:100vh;
+  }
+  /* floating hearts layer */
+  #hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .heart{position:absolute;bottom:-40px;animation:rise linear forwards;opacity:.8}
+  @keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+
+
+  /* Real animated glass bubbles for personal admiration notes */
+  .bubble-area{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px;max-width:720px;margin:28px auto 22px;min-height:180px;padding:12px}
+  .bubble{appearance:none;border:1px solid rgba(255,255,255,.95);cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center;
+    width:clamp(78px,19vw,112px);height:clamp(78px,19vw,112px);border-radius:50%;font-size:0;color:transparent;
+    background:radial-gradient(circle at 28% 22%,rgba(255,255,255,.98) 0 5%,rgba(255,255,255,.65) 8%,rgba(255,126,176,.48) 28%,rgba(236,67,133,.28) 62%,rgba(255,255,255,.72) 100%);
+    box-shadow:inset -8px -10px 18px rgba(214,51,108,.15),inset 5px 6px 14px rgba(255,255,255,.85),0 10px 22px rgba(186,53,105,.18);
+    animation:bubbleFloat 3.4s ease-in-out infinite;transition:transform .28s ease,opacity .28s ease,box-shadow .28s ease}
+  .bubble:before{content:'';position:absolute;width:24%;height:13%;left:22%;top:18%;border-radius:50%;background:rgba(255,255,255,.9);transform:rotate(-35deg);filter:blur(.3px)}
+  .bubble:after{content:'♡';font-family:Arial,sans-serif;font-size:clamp(28px,7vw,40px);font-weight:300;color:#e83e7c;text-shadow:0 2px 5px rgba(255,255,255,.85)}
+  .bubble:nth-child(2n){animation-delay:-1.2s;transform:translateY(8px);background:radial-gradient(circle at 28% 22%,#fff 0 4%,rgba(255,255,255,.7) 9%,rgba(255,184,205,.62) 32%,rgba(255,91,151,.35) 68%,rgba(255,255,255,.7) 100%)}
+  .bubble:nth-child(3n){animation-delay:-2s}
+  .bubble:hover,.bubble:focus-visible{outline:3px solid rgba(255,255,255,.8);outline-offset:4px;box-shadow:0 0 30px rgba(255,80,145,.45),inset 0 0 18px white;transform:scale(1.08)}
+  .bubble.popped{pointer-events:none;animation:popAway .35s ease forwards}
+  @keyframes bubbleFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+  @keyframes popAway{0%{scale:1;opacity:1}65%{scale:1.25;opacity:.8}100%{scale:.05;opacity:0}}
+  .bubble-msg{max-width:700px;margin:20px auto 0;padding:24px 26px;border:1px solid rgba(255,255,255,.9);border-radius:26px;background:rgba(255,255,255,.72);box-shadow:0 12px 30px rgba(186,53,105,.12);font-size:clamp(16px,4vw,20px);line-height:1.8;min-height:90px;opacity:1;transition:transform .25s ease}
+  .bubble-msg.bubble-pop{animation:notePop .45s ease}
+  @keyframes notePop{0%{opacity:.3;transform:translateY(10px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
+
+
+  /* Playful Love Challenge */
+  .love-game{max-width:720px;margin:0 auto 34px;padding:28px 20px 30px;border:1px solid rgba(255,255,255,.9);border-radius:30px;background:rgba(255,255,255,.58);box-shadow:0 18px 45px rgba(186,53,105,.14);overflow:hidden}
+  .love-game .game-kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#b0446b;font-weight:600}
+  .love-game h2{font-family:'Great Vibes',cursive;font-size:clamp(38px,9vw,56px);font-weight:400;color:#d6336c;margin:8px 0 10px}
+  .love-game p{line-height:1.8}
+  .game-arena{height:150px;position:relative;max-width:460px;margin:18px auto 4px;border-radius:22px;background:rgba(255,225,236,.55);border:1px dashed rgba(214,51,108,.22);overflow:hidden;touch-action:pan-y}
+  .game-btn{border:0;border-radius:999px;padding:13px 18px;font:600 14px 'Poppins',sans-serif;box-shadow:0 8px 18px rgba(186,53,105,.15);cursor:pointer;white-space:nowrap;touch-action:manipulation}
+  #trustYes{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#ff4f88,#ff8fab);color:white;z-index:2}
+  #trustNo{position:absolute;left:68%;top:18%;background:white;color:#b0446b;border:1px solid #ffd0df;z-index:3;transition:left .16s ease,top .16s ease}
+  #gameReply{min-height:54px;margin:16px auto 0;max-width:560px;line-height:1.8;font-weight:400}
+  .game-next{margin-top:14px;display:none}
+  .game-next.show{display:inline-block;animation:notePop .45s ease}
+  @media(prefers-reduced-motion:reduce){#trustNo{transition:none}}
+
+
+  /* CINEMATIC LOVE QUEST polish */
+  .love-game{position:relative;background:linear-gradient(145deg,rgba(255,255,255,.86),rgba(255,230,239,.72));border:1px solid rgba(255,255,255,.98);box-shadow:0 24px 70px rgba(176,40,91,.19),inset 0 1px 0 white;isolation:isolate}
+  .love-game:before{content:'♡';position:absolute;right:12px;top:-30px;font-size:150px;color:rgba(255,92,138,.08);z-index:-1;transform:rotate(15deg)}
+  .quest-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+  .quest-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:99px;background:#fff0f5;color:#b52c61;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+  .quest-count{font-size:12px;color:#a54b6b;font-weight:600}
+  .quest-progress{height:7px;background:#ffe1eb;border-radius:99px;overflow:hidden;margin:0 0 24px}
+  .quest-progress span{display:block;height:100%;width:25%;border-radius:99px;background:linear-gradient(90deg,#ff4f88,#ffb36c);transition:width .5s ease}
+  .quest-emoji{font-size:42px;display:block;filter:drop-shadow(0 8px 12px #ffabc8);animation:questBob 2s ease-in-out infinite}
+  @keyframes questBob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-8px) rotate(4deg)}}
+  .love-game h2{font-size:clamp(42px,10vw,64px);line-height:1.08;text-shadow:0 4px 0 rgba(255,255,255,.65)}
+  .game-question{font-size:clamp(16px,4vw,19px);max-width:520px;margin:0 auto;color:#6d3048}
+  .game-arena{height:180px;max-width:500px;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.9),rgba(255,220,233,.7));border:1px solid rgba(255,125,166,.28);box-shadow:inset 0 5px 20px rgba(214,51,108,.06);overflow:hidden}
+  .game-btn{padding:13px 17px;font-size:13px;max-width:calc(100% - 16px);white-space:normal;line-height:1.35}
+  #trustYes{box-shadow:0 10px 25px rgba(214,51,108,.3)}
+  #trustNo{box-shadow:0 10px 25px rgba(255,255,255,.8);will-change:left,top}
+  #gameReply{background:rgba(255,255,255,.55);border-radius:18px;padding:12px 15px;min-height:64px}
+  .quest-hint{font-size:12px;color:#a34a6b;margin-top:8px;opacity:.9}
+  .quest-win{display:none;margin:18px auto 0;padding:16px;border-radius:20px;background:linear-gradient(135deg,#fff4f7,#ffe0ec);border:1px solid white;animation:notePop .45s ease}
+  .quest-win.show{display:block}
+  .quest-win strong{color:#d6336c}
+  .bubble-intro{display:inline-block;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.55);font-size:12px;color:#a34366;margin:4px auto 8px}
+  .bubble{cursor:pointer;touch-action:manipulation}
+  .bubble.popped{animation:popAway .35s ease forwards}
+  @media(max-width:420px){.love-game{padding:24px 14px}.game-arena{height:190px}.quest-top{justify-content:center}.game-btn{font-size:12px;padding:11px 13px}}
+
+  section{position:relative;z-index:1;padding:64px 20px;max-width:900px;margin:0 auto;text-align:center}
+
+  /* intro overlay */
+  #intro{
+    position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 40%,#ff9eb5,#d6336c 90%);color:#fff;text-align:center;padding:24px;
+    transition:opacity .9s ease, visibility .9s;
+  }
+  #intro.hide{opacity:0;visibility:hidden}
+  #intro .gift{font-size:84px;animation:bounce 1.6s infinite}
+  #intro h2{font-family:'Great Vibes',cursive;font-size:44px;font-weight:400;margin:14px 0 6px}
+  #intro p{opacity:.9;margin-bottom:26px}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+  .btn{
+    border:none;cursor:pointer;font:600 16px 'Poppins',sans-serif;padding:14px 30px;border-radius:50px;
+    background:#fff;color:var(--pink);box-shadow:0 8px 24px rgba(0,0,0,.18);transition:transform .2s;
+  }
+  .btn:hover{transform:scale(1.06)}
+  .btn.pink{background:linear-gradient(135deg,#ff5c8a,#ff8fab);color:#fff}
+
+  /* hero */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+  .hero .small{letter-spacing:6px;text-transform:uppercase;font-size:13px;color:#b0446b}
+  .hero h1{
+    font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(52px,13vw,110px);line-height:1.05;margin:12px 0;
+    background:linear-gradient(90deg,#d6336c,#ff5c8a,#e8a317);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .name{font-family:'Great Vibes',cursive;font-size:clamp(40px,10vw,76px);color:#d6336c}
+  .cake{font-size:70px;margin-top:10px;animation:bounce 2s infinite}
+  .scroll{margin-top:30px;font-size:13px;color:#b0446b;animation:bounce 2s infinite}
+
+  /* wish card */
+  .card{
+    background:rgba(255,255,255,.72);backdrop-filter:blur(8px);border-radius:28px;padding:38px 26px;
+    box-shadow:0 18px 50px rgba(214,51,108,.18);
+  }
+  .card h2,.title{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(36px,8vw,54px);color:#d6336c;margin-bottom:18px}
+  #wish{font-size:clamp(16px,2.6vw,19px);line-height:1.9;min-height:240px;text-align:left;white-space:pre-line}
+  .caret{display:inline-block;width:2px;height:1.1em;background:var(--pink);vertical-align:text-bottom;animation:blink 1s infinite}
+  @keyframes blink{50%{opacity:0}}
+  .sign{margin-top:18px;font-family:'Great Vibes',cursive;font-size:32px;color:#d6336c;text-align:right}
+
+  /* gallery */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .grid figure{
+    background:#fff;padding:10px 10px 38px;border-radius:10px;box-shadow:0 10px 26px rgba(0,0,0,.15);
+    transform:rotate(var(--r,0deg));transition:transform .3s;position:relative
+  }
+  .grid figure:nth-child(odd){--r:-2.5deg}
+  .grid figure:nth-child(even){--r:2.5deg}
+  .grid figure:hover{transform:rotate(0) scale(1.05);z-index:3}
+  .grid img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 30%;border-radius:6px;display:block}
+  .grid figcaption{position:absolute;bottom:9px;left:0;right:0;font-family:'Great Vibes',cursive;font-size:22px;color:#d6336c}
+
+  /* video */
+  video{width:100%;max-width:560px;border-radius:22px;box-shadow:0 16px 44px rgba(214,51,108,.3);background:#000}
+
+  /* reasons */
+  .reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
+  .reason{background:rgba(255,255,255,.75);border-radius:20px;padding:22px 16px;box-shadow:0 8px 22px rgba(214,51,108,.12)}
+  .reason span{font-size:34px;display:block;margin-bottom:8px}
+
+  /* surprise */
+  #surprise-msg{
+    margin-top:26px;font-family:'Great Vibes',cursive;font-size:clamp(34px,8vw,58px);color:#d6336c;
+    opacity:0;transform:scale(.8);transition:all .8s;
+  }
+  #surprise-msg.show{opacity:1;transform:scale(1)}
+
+  footer{position:relative;z-index:1;text-align:center;padding:30px 20px 60px;color:#b0446b;font-size:14px}
+
+  /* music toggle */
+  #music{
+    position:fixed;right:16px;bottom:16px;z-index:40;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;
+    background:#fff;font-size:22px;box-shadow:0 6px 18px rgba(0,0,0,.2);display:none
+  }
+  canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:all .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Interactive storybook */
+  #storybook{max-width:760px}
+  .story-shell{position:relative;overflow:hidden;text-align:left;border-radius:30px;padding:clamp(22px,5vw,38px);background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,237,245,.82));border:1px solid rgba(255,255,255,.9);box-shadow:0 22px 65px rgba(174,42,95,.18)}
+  .story-kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b0446b;font-weight:600}
+  .story-page-count{float:right;color:#b0446b;font-size:12px}
+  .story-art{font-size:clamp(44px,12vw,76px);text-align:center;margin:22px 0 8px;filter:drop-shadow(0 8px 12px rgba(214,51,108,.15));animation:storyFloat 3s ease-in-out infinite}
+  @keyframes storyFloat{50%{transform:translateY(-8px) rotate(2deg)}}
+  .story-title{font-family:'Great Vibes',cursive;font-size:clamp(38px,9vw,58px);color:#d6336c;text-align:center;line-height:1.1;margin:8px 0 18px}
+  .story-text{font-size:clamp(15px,3.8vw,18px);line-height:1.9;white-space:pre-line;min-height:140px}
+  .story-choice{display:grid;gap:10px;margin-top:20px}
+  .story-choice button{width:100%;border:1px solid #ffc1d4;border-radius:18px;padding:14px 16px;text-align:left;background:#fff;color:#6d2946;font:500 14px 'Poppins',sans-serif;cursor:pointer;transition:transform .2s,background .2s}
+  .story-choice button:active{transform:scale(.98);background:#ffe4ee}
+  .story-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+  .story-progress{height:5px;border-radius:99px;background:#f7c7d8;overflow:hidden;margin-top:18px}
+  .story-progress span{display:block;height:100%;width:16.66%;background:linear-gradient(90deg,#ff5c8a,#d6336c);transition:width .4s}
+  .story-small{font-size:12px;color:#a34b6c}
+  .story-end{display:none;margin-top:22px;padding:20px;border-radius:20px;background:#fff0f6;border:1px dashed #ef8eaf;text-align:center;line-height:1.8}
+  @media(prefers-reduced-motion:reduce){.story-art{animation:none}}
+
+</style>
+</head>
+<body>
+
+<!-- ============ EDIT HERE ============ -->
+<script>
+const CONFIG = {
+  name: "Pratheeksha",
+  from: "Rakshith",            // <- put your name (or a pet name)
+  // Photos live in the photos/ folder; edit the captions here
+  photos: [
+    {src:"1.jpg", caption:"My favourite smile"},
+    {src:"2.jpg", caption:"Golden hour, golden you"},
+    {src:"3.jpg", caption:"Sunshine and you"},
+    {src:"4.jpg", caption:"Brighter than the sunflowers"},
+    {src:"5.jpg", caption:"That laugh"},
+    {src:"6.jpg", caption:"So beautiful"},
+    {src:"7.jpg", caption:"Effortlessly lovely"},
+    {src:"8.jpg", caption:"My heart in one frame"},
+    {src:"9.jpg", caption:"That little smile"},
+    {src:"10.jpg", caption:"Pure joy"},
+    {src:"11.jpg", caption:"Lost in the view"},
+    {src:"12.jpg", caption:"Always so graceful"},
+    {src:"13.jpg", caption:"Cutest pose ever"},
+    {src:"14.jpg", caption:"Like a sunflower"},
+    {src:"15.jpg", caption:"Always smiling"},
+    {src:"16.jpg", caption:"Peace and sunshine"},
+    {src:"17.jpg", caption:"Stunning, always"},
+    {src:"18.jpg", caption:"Forever my favourite"}
+  ],
+  video: "video.mp4",                // optional, delete the file to hide this section
+  music: "song.mp3",                 // optional, delete the file to hide the music button
+  wish:
+`Happy Birthday, my love! 🎂
+
+Today the world got the sweetest, kindest soul it has ever known, and I got the luckiest seat right next to her.
+
+You are the kind of person who makes everyone around you feel safe, seen and loved. Your heart is pure, your smile can fix my worst day, and your kindness is something I admire more every single day.
+
+Thank you for being you, Pratheeksha. Thank you for every laugh, every hug and every little moment that turned into my favourite memory.
+
+May this year give you everything you give to others: love, joy, and a thousand reasons to smile. I'll always be right here, cheering for you.
+
+I love you, today and always. 💖`,
+  reasons: [
+    ["🌸","You are the kindest person I know"],
+    ["😊","Your smile lights up my whole world"],
+    ["🤗","You make every place feel like home"],
+    ["✨","You are my favourite person, always"]
+  ]
+};
+</script>
+<!-- =================================== -->
+
+<div id="hearts"></div>
+<canvas id="confetti"></canvas>
+
+<div id="intro">
+  <div class="gift">🎁</div>
+  <h2>A little surprise for you…</h2>
+  <p>Tap to open, ideally with sound on 🎵</p>
+  <button class="btn" id="openBtn">Open 💌</button>
+</div>
+
+<button id="music" title="Music on/off">🎵</button>
+
+<section class="hero">
+  <div class="small">Happy Birthday</div>
+  <h1>To the sweetest girl</h1>
+  <div class="name" id="nameHero"></div>
+  <div class="cake">🎂</div>
+  <div class="scroll">scroll down ↓</div>
+</section>
+
+<section class="reveal">
+  <div class="card">
+    <h2>A wish from my heart</h2>
+    <div id="wish"></div><span class="caret"></span>
+    <div class="sign">- <span id="fromName"></span></div>
+  </div>
+</section>
+
+<section class="reveal" id="photoSec">
+  <div class="title">Our beautiful moments</div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="reveal" id="videoSec" style="display:none">
+  <div class="title">Something special for you</div>
+  <video id="vid" controls playsinline preload="metadata"></video>
+</section>
+
+<section class="reveal">
+  <div class="title">Why you're so special</div>
+  <div class="reasons" id="reasons"></div>
+</section>
+
+
+
+<section class="reveal" id="storybook">
+  <div class="title">A story with you in it… 📖</div>
+  <p style="margin:-4px auto 22px;max-width:620px;line-height:1.8">Puttu, this isn't a story about a perfect couple. It's a little story about two imperfect people, a love worth caring for, and the girl who became my favourite part of the day.</p>
+  <div class="story-shell">
+    <div><span class="story-kicker">A tiny love story</span><span class="story-page-count" id="storyCount">CHAPTER 01 / 06</span></div>
+    <div class="story-progress"><span id="storyProgress"></span></div>
+    <div class="story-art" id="storyArt">🌙</div>
+    <h3 class="story-title" id="storyTitle">The ordinary day</h3>
+    <div class="story-text" id="storyText" aria-live="polite">Every story begins somewhere. Ours didn't need fireworks or a perfect movie scene. Somehow, in the middle of ordinary days, you became someone I looked forward to, someone whose smile could change the mood of my whole day.</div>
+    <div class="story-choice" id="storyChoices"></div>
+    <div class="story-controls"><span class="story-small" id="storyHint">Choose what happens next ✨</span><button class="btn pink" id="storyNext" type="button">Turn the page →</button></div>
+    <div class="story-end" id="storyEnd"><strong>And the story keeps going… 💗</strong><br>Not because every page will be perfect, but because I want to keep showing up, listening, learning, and choosing us. <br><br><button class="btn pink" id="storyToNotes" type="button">Open your love notes 💌</button></div>
+  </div>
+</section>
+
+<section class="reveal" id="love-challenge">
+  <div class="love-game">
+    <div class="quest-top"><span class="quest-pill">✦ Puttu's love quest</span><span class="quest-count" id="questCount">MISSION 01 / 04</span></div>
+    <div class="quest-progress" aria-label="Love quest progress"><span id="questProgress"></span></div>
+    <span class="quest-emoji" id="questEmoji">💌</span>
+    <h2 id="questTitle">Catch my answer!</h2>
+    <p class="game-question" id="questQuestion"><strong>Puttu, do you ever doubt my love for you?</strong><br>Try pressing “No”… if you can catch it. 😏</p>
+    <div class="game-arena" id="gameArena" aria-label="Playful love challenge with a runaway button">
+      <button type="button" class="game-btn" id="trustYes">Sometimes… 🥺</button>
+      <button type="button" class="game-btn" id="trustNo">No, I trust you ❤️</button>
+    </div>
+    <div class="quest-hint" id="questHint">Psst… the “No” button is a little shy. 🙈</div>
+    <div id="gameReply" aria-live="polite">You can be honest with me, Puttu. Your feelings matter to me. 🫂</div>
+    <div class="quest-win" id="questWin"><strong>Quest unlocked! 💖</strong><p id="questWinText">Your next surprise is waiting below.</p></div>
+    <button type="button" class="btn pink game-next" id="nextChallenge">Unlock my love notes ↓</button>
+  </div>
+</section>
+
+<section class="reveal" id="admiration-section">
+  <div class="title">A little universe of admiration ✨</div>
+  <p style="margin-bottom:14px">Puttu, welcome to your private little universe. Every bubble hides something I adore about you. Pop them one by one. 💗</p><span class="bubble-intro">♡ 9 love notes made just for you ♡</span>
+  <div id="puttu-bubble-area" class="bubble-area" aria-label="Tap a floating bubble to reveal a personal message"></div>
+  <div id="puttu-note" class="bubble-msg" aria-live="polite">My favourite girl, tap a bubble. I have so many beautiful things I want you to know about yourself. 💌</div>
+  <div class="title" style="margin-top:42px">One more thing…</div>
+  <button class="btn pink" id="surpriseBtn">Tap for more surprises 🎁</button><div id="surprise-msg"></div>
+</section>
+<footer>Made with 💖 just for you</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+$('#nameHero').textContent = CONFIG.name;
+$('#fromName').textContent = CONFIG.from;
+document.title = `Happy Birthday ${CONFIG.name} 🎂`;
+
+// reasons
+$('#reasons').innerHTML = CONFIG.reasons.map(r=>`<div class="reason"><span>${r[0]}</span>${r[1]}</div>`).join('');
+
+// photos (kept in order; any that fail to load are removed)
+const grid = $('#grid');
+CONFIG.photos.forEach(p=>{
+  const f = document.createElement('figure');
+  const img = new Image();
+  img.src = p.src; img.alt = p.caption; img.loading = 'lazy'; img.decoding = 'async';
+  const c = document.createElement('figcaption'); c.textContent = p.caption;
+  img.onerror = () => { f.remove(); if(!grid.children.length) $('#photoSec').style.display='none'; };
+  f.append(img, c); grid.append(f);
+});
+
+// video (only show if file exists)
+const vid = $('#vid');
+vid.src = CONFIG.video;
+vid.addEventListener('loadedmetadata', ()=> $('#videoSec').style.display='block');
+
+// music
+const audio = new Audio(CONFIG.music); audio.loop = true;
+let audioOk = true; audio.addEventListener('error', ()=> audioOk=false);
+const musicBtn = $('#music');
+musicBtn.onclick = () => {
+  if(audio.paused){ audio.play(); musicBtn.textContent='🎵'; } else { audio.pause(); musicBtn.textContent='🔇'; }
+};
+
+// floating hearts
+const heartsEl = $('#hearts');
+const emojis = ['💖','💗','💕','🌸','✨','💝'];
+function spawnHeart(){
+  const h = document.createElement('div');
+  h.className='heart'; h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+  h.style.left = Math.random()*100+'vw';
+  h.style.fontSize = (14+Math.random()*26)+'px';
+  h.style.animationDuration = (7+Math.random()*7)+'s';
+  heartsEl.append(h); setTimeout(()=>h.remove(),15000);
+}
+setInterval(spawnHeart, 600);
+
+// typewriter
+let typed = false;
+function typeWish(){
+  if(typed) return; typed = true;
+  const el = $('#wish'); let i = 0; const t = CONFIG.wish;
+  (function step(){ el.textContent = t.slice(0,i++); if(i<=t.length) setTimeout(step, 32); })();
+}
+
+// scroll reveal
+const io = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){ e.target.classList.add('in'); if(e.target.querySelector('#wish')) typeWish(); }
+}),{threshold:.25});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// confetti
+const cv = $('#confetti'), ctx = cv.getContext('2d'); let parts = [];
+function size(){ cv.width = innerWidth; cv.height = innerHeight; } size(); addEventListener('resize',size);
+function burst(n=160){
+  const colors=['#ff5c8a','#ffd27a','#ff9eb5','#fff','#c77dff','#7ad7ff'];
+  for(let i=0;i<n;i++) parts.push({
+    x:innerWidth/2, y:innerHeight/2, vx:(Math.random()-.5)*16, vy:Math.random()*-16-4,
+    s:5+Math.random()*7, c:colors[Math.floor(Math.random()*colors.length)], r:Math.random()*6, vr:(Math.random()-.5)*.3, life:0
+  });
+}
+(function loop(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  parts.forEach(p=>{ p.vy+=.35; p.x+=p.vx; p.y+=p.vy; p.r+=p.vr; p.life++;
+    ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle=p.c; ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6); ctx.restore(); });
+  parts = parts.filter(p=>p.y<cv.height+20 && p.life<260);
+  requestAnimationFrame(loop);
+})();
+
+// open button
+$('#openBtn').onclick = () => {
+  $('#intro').classList.add('hide');
+  burst();
+  audio.play().then(()=>{ musicBtn.style.display='block'; }).catch(()=>{});
+  setTimeout(()=>{ if(audioOk) musicBtn.style.display='block'; }, 400);
+};
+
+// surprise button
+$('#surpriseBtn').onclick = () => {
+  const m = $('#surprise-msg');
+  m.textContent = `I love you, ${CONFIG.name}! 💖`;
+  m.classList.add('show');
+  burst(220); setTimeout(()=>burst(160),600); setTimeout(()=>burst(160),1200);
+};
+
+
+
+// Interactive storybook: six short chapters with choices that change the little narration.
+(function setupStorybook(){
+ const chapters=[
+  {art:'🌙',title:'The ordinary day',text:'Every story begins somewhere. Ours didn’t need fireworks or a perfect movie scene. Somehow, in the middle of ordinary days, you became someone I looked forward to—someone whose smile could change the mood of my whole day.',choices:[['Keep reading; I want the cute part 🥹', 'And then I noticed the little things: the way you speak, the expressions you make without realising, the way your presence makes a place feel warmer. It wasn’t one grand moment. It was a hundred tiny ones.'],['Skip to the butterflies 🦋','Okay, straight to the butterflies: somewhere along the way, your name started making me smile at my phone like a complete fool. You had become my favourite notification.']]},
+  {art:'🦋',title:'The butterflies',text:'Then came those small moments that somehow became big memories. A conversation that lasted longer than planned. A laugh I wanted to hear again. The feeling that even doing nothing could be special if it was with you.',choices:[['Tell me what you noticed about me 🌷','I noticed your smile first—but I kept falling for the person behind it: your heart, your honesty, your softness, your fire, and the way you care even when you have your own worries.'],['What makes me different? ✨','You don’t have to be the loudest person in the room to matter. There’s something unmistakably you about you, and I love the details that no one could copy.']]},
+  {art:'💗',title:'The girl behind the smile',text:'Puttu, you are beautiful, yes—but I never want you to feel that your beauty is the only thing I see. I admire your mind, your heart, your little moods, your determination, your kindness, and the person you are when nobody is watching.',choices:[['Keep admiring me, please 😌','Your laugh is one of my favourite sounds. Your eyes have a way of making me pause. Your little habits make me smile later when you aren’t even around. And your heart? That is the part I want to keep learning about.'],['What about my bad days? 🫂','You don’t have to be cheerful or strong every day to be loved. You can be tired, upset, uncertain, or quiet. I want to understand you on those days too—not just celebrate you when everything is easy.']]},
+  {art:'🌧️',title:'When clouds visit',text:'No real love story is sunshine every day. Sometimes we misunderstand each other. Sometimes fear speaks louder than reassurance. I can’t promise that I’ll always say everything perfectly—but I can promise to listen, own my mistakes, and let my actions support my words.',choices:[['So what if I feel doubtful? 🥺','Then tell me what hurts or worries you. I don’t want you to hide your feelings to protect mine. Trust matters, and I want us to build it patiently, through honesty and consistency.'],['No dramatic promises—just actions ❤️','Exactly. Love is not only a sentence on a screen. It is respect, honesty, effort, boundaries, and showing up even after the easy butterflies settle into everyday life.']]},
+  {art:'🧭',title:'The choice I keep making',text:'I don’t want you to have to compete with the world for a place in my heart. I want to make you feel secure through the way I treat you. If I get something wrong, I want to talk it through—not disappear, punish you, or make you feel silly for caring.',choices:[['What do you want me to remember? 💌','You are not a burden for needing reassurance. You are not “too much” for having feelings. I want us to be a team: honest with each other, gentle when we can, and brave enough to repair what needs repairing.'],['One more chapter, please 📖','Then let this be the chapter where the promise gets practical: more listening, more patience, more truth, more little acts of care—and less assuming we should magically know what the other person feels.']]},
+  {art:'💍',title:'Our story is still being written',text:'If I could give you one thing, it wouldn’t be a life with no hard days. It would be the feeling that you don’t have to face them alone. I want more silly laughs, more memories, more adventures, and the privilege of discovering new things to admire about you.',choices:[['I’m ready for the final page 🥹','There isn’t really a final page, Puttu. This is just my little way of reminding you that you are loved, admired, and worth the effort it takes to love well.'],['Unlock my secret note 🔐','Secret unlocked: you are my favourite plot twist, my soft place to land, and a person I’m grateful to know more deeply with every chapter.']]}
+ ];
+ let index=0, chosenText='';
+ const art=document.getElementById('storyArt'),title=document.getElementById('storyTitle'),textEl=document.getElementById('storyText'),choices=document.getElementById('storyChoices'),count=document.getElementById('storyCount'),progress=document.getElementById('storyProgress'),hint=document.getElementById('storyHint'),next=document.getElementById('storyNext'),end=document.getElementById('storyEnd');
+ function render(){const c=chapters[index];art.textContent=c.art;title.textContent=c.title;textEl.textContent=c.text;count.textContent=`CHAPTER ${String(index+1).padStart(2,'0')} / 06`;progress.style.width=((index+1)/chapters.length*100)+'%';choices.replaceChildren();chosenText='';hint.textContent='Choose a little path through our story ✨';c.choices.forEach(([label,response])=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>{chosenText=response;textEl.textContent=response;[...choices.children].forEach(x=>x.classList.remove('selected'));b.classList.add('selected');hint.textContent='A little page written just for you 💗';});choices.appendChild(b);});next.textContent=index===chapters.length-1?'Finish our story ✨':'Turn the page →';end.style.display='none';}
+ next.addEventListener('click',()=>{if(index<chapters.length-1){if(!chosenText){hint.textContent='Pick one of the little choices first, Puttu 😊';choices.animate([{transform:'translateX(0)'},{transform:'translateX(-4px)'},{transform:'translateX(4px)'},{transform:'translateX(0)'}],{duration:250});return;}index++;render();}else{end.style.display='block';next.style.display='none';hint.textContent='The best part is still ahead 💞';}});
+ document.getElementById('storyToNotes').addEventListener('click',()=>document.getElementById('admiration-section').scrollIntoView({behavior:'smooth',block:'start'}));
+ render();
+})();
+
+// Playful, touch-friendly Love Quest. The runaway answer is intentionally cheeky, never guilt-inducing.
+(function setupLoveChallenge(){
+  const arena=document.getElementById('gameArena'), noBtn=document.getElementById('trustNo'), yesBtn=document.getElementById('trustYes');
+  const reply=document.getElementById('gameReply'), next=document.getElementById('nextChallenge');
+  const title=document.getElementById('questTitle'), question=document.getElementById('questQuestion'), emoji=document.getElementById('questEmoji');
+  const count=document.getElementById('questCount'), progress=document.getElementById('questProgress'), hint=document.getElementById('questHint'), win=document.getElementById('questWin'), winText=document.getElementById('questWinText');
+  if(!arena||!noBtn||!yesBtn||!reply||!next)return;
+  let dodges=0, answered=false;
+  function moveNoButton(){
+    if(answered)return;
+    const pad=8, maxX=Math.max(pad,arena.clientWidth-noBtn.offsetWidth-pad), maxY=Math.max(pad,arena.clientHeight-noBtn.offsetHeight-pad);
+    let x=pad+Math.random()*(maxX-pad), y=pad+Math.random()*(maxY-pad);
+    // Avoid covering the honest answer button.
+    for(let i=0;i<8;i++){
+      const overlap=Math.abs(x+noBtn.offsetWidth/2-arena.clientWidth/2)<(yesBtn.offsetWidth/2+noBtn.offsetWidth/2+12) && Math.abs(y+noBtn.offsetHeight/2-arena.clientHeight/2)<45;
+      if(!overlap)break; x=pad+Math.random()*(maxX-pad);y=pad+Math.random()*(maxY-pad);
+    }
+    noBtn.style.left=x+'px';noBtn.style.top=y+'px';noBtn.style.transform='none';
+    dodges++;
+    const lines=['Hehe—missed me! 😝','Puttu, this button has stage fright 😂','Even the button is blushing now 🙈💗','One more try, detective Puttu! 🕵️‍♀️💕','Okay, this button is officially dramatic. Just like me when I miss you. 😂❤️'];
+    hint.textContent=lines[Math.min(dodges-1,lines.length-1)];
+    if(dodges===3 && typeof burst==='function')burst(18);
+  }
+  noBtn.addEventListener('pointerenter',moveNoButton);
+  noBtn.addEventListener('pointerdown',e=>{e.preventDefault();moveNoButton()});
+  noBtn.addEventListener('click',e=>{e.preventDefault();moveNoButton()});
+  yesBtn.addEventListener('click',()=>{
+    if(answered)return;answered=true;
+    reply.textContent='Thank you for being honest with me, my Puttu. 🫂❤️ I never want you to hide a worry just to protect my feelings. I know trust is earned through actions, patience, honesty and consistency—and I want to keep showing you that you matter to me.';
+    title.textContent='Your feelings are safe here';emoji.textContent='🫶';question.textContent='No tests can replace honest conversations. I choose to listen to you, every time.';
+    noBtn.style.display='none';yesBtn.style.display='none';arena.style.height='auto';arena.style.minHeight='86px';
+    count.textContent='MISSION 01 COMPLETE';progress.style.width='50%';hint.textContent='Bonus points for honesty: ∞ 💗';win.classList.add('show');winText.textContent='Next up: collect little love notes written just for you.';next.classList.add('show');if(typeof burst==='function')burst(70);
+  });
+  next.addEventListener('click',()=>{document.getElementById('admiration-section')?.scrollIntoView({behavior:'smooth',block:'start'});});
+  // Place the runaway button on a random spot after layout is ready.
+  requestAnimationFrame(()=>setTimeout(moveNoButton,450));
+  window.addEventListener('resize',()=>{if(!answered)moveNoButton()});
+})();
+
+// Each real floating bubble reveals a personal admiration note for Puttu.
+const puttuMessages = [
+  "Puttu, your smile has this beautiful way of making an ordinary day feel special. I wish you could see yourself through my eyes for just one minute. ❤️",
+  "I admire your heart — the way you care, the way you feel things deeply, and the love you give even when life is not easy. That softness is a strength, not a weakness. 🌷",
+  "You are beautiful, Puttu, but what makes you unforgettable to me is the person you are: your expressions, your little habits, your laughter, and all the tiny things only I notice. 💗",
+  "I love how you can make a place feel warmer just by being there. Wherever we are, your presence makes it feel more like home to me. 🏡",
+  "I am proud of your strength. Even on days when you doubt yourself, I see someone who keeps trying, keeps caring, and deserves so much tenderness. ✨",
+  "You never need to become someone else to be loved by me. I want to know every version of you — happy, quiet, worried, silly, sleepy — and treat each one with care. 🫂",
+  "Your eyes, your smile, your voice, and the way your face changes when you are excited are little details I could never find ordinary. You are special to me in a thousand small ways. 💞",
+  "And about us, Puttu: I don't want you to rely only on pretty words. I want to show you through honesty, respect, consistency, and my choices that my love is real. You matter to me. Always. ❤️"
+];
+const puttuBubbleArea = document.getElementById('puttu-bubble-area');
+const puttuNote = document.getElementById('puttu-note');
+if (puttuBubbleArea && puttuNote) {
+  puttuMessages.forEach((message, i) => {
+    const b = document.createElement('button');
+    b.className = 'bubble'; b.type = 'button';
+    b.setAttribute('aria-label', 'Open admiration message ' + (i + 1));
+    b.title = 'Tap to reveal a message';
+    b.style.animationDelay = (i * 0.16) + 's';
+    b.addEventListener('click', () => {
+      b.classList.add('popped'); b.setAttribute('aria-label','Message opened');
+      puttuNote.textContent = message;
+      puttuNote.classList.remove('bubble-pop'); void puttuNote.offsetWidth; puttuNote.classList.add('bubble-pop');
+      if (typeof burst === 'function') burst(28);
+    });
+    puttuBubbleArea.appendChild(b);
+  });
+}
+
+</script>
+</body>
+</html>
